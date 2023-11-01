@@ -5,7 +5,7 @@ console.log(student_group)
 
 read_perms = [permissions.LIST, permissions.READ_ATTR, permissions.READ_EXTENDED_ATTR, permissions.READ_PERMS] 
 read_modify_perms = [permissions.LIST, permissions.READ_ATTR, permissions.READ_EXTENDED_ATTR, permissions.READ_PERMS, permissions.WRITE_DATA, permissions.APPEND_DATA, permissions.WRITE_ATTR, permissions.WRITE_EXTENDED_ATTR, 
-    permissions.DELETE, permissions.DELETE_SUB]
+    permissions.DELETE, permissions._SUB]
 modify_perms = [permissions.WRITE_DATA, permissions.APPEND_DATA, permissions.WRITE_ATTR, permissions.WRITE_EXTENDED_ATTR, 
     permissions.DELETE, permissions.DELETE_SUB]
 
