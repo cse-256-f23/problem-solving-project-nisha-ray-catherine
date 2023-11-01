@@ -1,7 +1,7 @@
 // ---- Define your dialogs  and panels here ----
 
 
-
+//test
 // ---- Display file structure ----
 
 // (recursively) makes and returns an html element (wrapped in a jquery object) for a given file object
