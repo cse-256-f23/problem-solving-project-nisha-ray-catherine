@@ -48,7 +48,7 @@ file_permission_users.css({
 })
 
 // Make button to add a new user to the list:
-perm_add_user_select = define_new_user_select_field('perm_add_user', 'Add Permission', on_user_change = function(selected_user){
+perm_add_user_select = define_new_user_select_field('perm_add_user', 'Add User', on_user_change = function(selected_user){
     let filepath = perm_dialog.attr('filepath')
     if(selected_user && (selected_user.length > 0) && (selected_user in all_users)) { // sanity check that a user is actually selected (and exists)
         let expected_user_elem_id = `permdialog_file_user_${selected_user}`
@@ -84,10 +84,10 @@ cant_remove_dialog.html(`
 
 // Make a confirmation "are you sure you want to remove?" dialog
 // Dialog for confirming removal of permissions for user and file (user and file attributed need to be populated)
-let are_you_sure_dialog = define_new_dialog('are_you_sure_dialog', "Removing Permissions for this User?", {
+let are_you_sure_dialog = define_new_dialog('are_you_sure_dialog', "Remove All Permissions", {
     buttons: {
         Yes: {
-            text: "Remove Permissions",
+            text: "Remove User",
             id: "are-you-sure-yes-button",
             click: function() {
                 // Which user and file were they trying to remove permissions for?
@@ -116,10 +116,10 @@ let are_you_sure_dialog = define_new_dialog('are_you_sure_dialog', "Removing Per
     }
 })
 // Add text to the dialog:
-are_you_sure_dialog.text('Do you want to remove permissions for this user?')
+are_you_sure_dialog.text('Do you want to remove all permissions for this user?')
 
 // Make actual "remove" button:
-perm_remove_user_button  = $('<button id="perm_remove_user" class="ui-button ui-widget ui-corner-all">Remove Permission</button>')
+perm_remove_user_button  = $('<button id="perm_remove_user" class="ui-button ui-widget ui-corner-all">Remove User</button>')
 perm_remove_user_button.click(function(){
     // Get the current user and filename we are working with:
     let selected_username = file_permission_users.attr('selected_item')
