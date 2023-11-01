@@ -84,10 +84,10 @@ cant_remove_dialog.html(`
 
 // Make a confirmation "are you sure you want to remove?" dialog
 // Dialog for confirming removal of permissions for user and file (user and file attributed need to be populated)
-let are_you_sure_dialog = define_new_dialog('are_you_sure_dialog', "Are you sure?", {
+let are_you_sure_dialog = define_new_dialog('are_you_sure_dialog', "Removing Permissions for this User?", {
     buttons: {
         Yes: {
-            text: "Yes",
+            text: "Remove Permissions",
             id: "are-you-sure-yes-button",
             click: function() {
                 // Which user and file were they trying to remove permissions for?
@@ -107,7 +107,7 @@ let are_you_sure_dialog = define_new_dialog('are_you_sure_dialog', "Are you sure
             },
         },
         No: {
-            text: "No",
+            text: "Go Back",
             id: "are-you-sure-no-button",
             click: function() {
                 $( this ).dialog( "close" );
@@ -145,7 +145,7 @@ perm_remove_user_button.click(function(){
 
 // --- Append all the elements to the permissions dialog in the right order: --- 
 perm_dialog.append(obj_name_div)
-perm_dialog.append($('<div id="permissions_user_title">Group or user names:</div>'))
+perm_dialog.append($('<div id="permissions_user_title">Choose group or user to edit permissions:</div>'))
 perm_dialog.append(file_permission_users)
 perm_dialog.append(perm_add_user_select)
 perm_add_user_select.append(perm_remove_user_button) // Cheating a bit again - add the remove button the the 'add user select' div, just so it shows up on the same line.
