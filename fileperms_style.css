@@ -18,7 +18,7 @@
     right: 0;
 }
 
-#permdialog_objname {
+#permdialog_objname, #permdialog_advanced_explantion_text{
     font-size: 0.8em;
     font-style: italic;
 }
@@ -34,6 +34,14 @@
     margin-bottom: 2em;
     margin-left: auto; 
     margin-right: 0;
+}
+
+#permdialog_grouped_permissions{
+    margin-bottom: 0.4em;
+}
+
+#permdialog_grouped_permissions th{
+    font-size: 0.8em;
 }
 
 #mturk-top-banner-drop-down-content {
