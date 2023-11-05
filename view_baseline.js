@@ -71,7 +71,19 @@ perm_add_user_select.find('span').hide()// Cheating a bit - just show the button
 // Make a dialog which shows up when they're not allowed to remove that user from that file (because of inheritance)
 cant_remove_dialog = define_new_dialog('cant_remove_inherited_dialog', 'Unseccessful Change', {
     buttons: {
-        OK: {
+            // Add: {
+            //     text: "Break",
+            //     id: "adv-inheritance-add-button",
+            //     click: function() {
+            //         let filepath = $('#advdialog').attr('filepath')
+            //         let file_obj = path_to_file[filepath]
+            //         convert_parent_permissions(file_obj)
+            //         open_advanced_dialog(filepath) // reload/reopen 'advanced' dialog
+            //         perm_dialog.attr('filepath', filepath) // force reload 'permissions' dialog
+            //         $( this ).dialog( "close" );
+            //     },
+            // },
+            OK: {
             text: "OK",
             id: "cant-remove-ok-button",
             click: function() {
@@ -85,7 +97,7 @@ cant_remove_dialog.html(`
     <span id="cant_remove_username_1" class = "cant_remove_username"></span> was not successfully removed because it is inheriting permissions from 
     its parent. 
     <br> <br>
-    To remove <span id="cant_remove_username_2" class = "cant_remove_username"></span>, click “Advanced” → uncheck <strong>“Include inheritable permissions from this object's parent”</strong> → click “OK” → then go back and select the user to remove.
+    To remove <span id="cant_remove_username_2" class = "cant_remove_username"></span>, click “Advanced” → uncheck <strong>“Inherit permission settings from its parent folder”</strong> → click “OK” → then go back and select the user to remove.
 </div>`)
 
 // Make a confirmation "are you sure you want to remove?" dialog
@@ -359,11 +371,11 @@ $('#adv_perm_inheritance').change(function(){
     }
     else {
         // has just been turned off - pop up dialog with add/remove/cancel
-        $(`<div id="add_remove_cancel" title="Security">
-            Warning: if you proceed, inheritable permissions will no longer propagate to this object.<br/>
-            - Click Add to convert and add inherited parent permissions as explicit permissions on this object<br/>
-            - Click Remove to remove inherited parent permissions from this object<br/>
-            - Click Cancel if you do not want to modify inheritance settings at this time.<br/>
+        $(`<div id="add_remove_cancel" title="Remove Inheritable Permissions">
+            Choose one of the following options to proceed:<br><br>
+            <strong>Break:</strong> break parent inheritance to allow removing a user<br><br>
+            <strong>Clear All:</strong> remove all existing permission from all users<br><br>
+            Cancel: go back<br/>
         </div>`).dialog({ // TODO: don't create this dialog on the fly
             modal: true,
             width: 400,
@@ -371,7 +383,7 @@ $('#adv_perm_inheritance').change(function(){
             position: { my: "top", at: "top", of: $('#html-loc') },
             buttons: {
                 Add: {
-                    text: "Add",
+                    text: "Break",
                     id: "adv-inheritance-add-button",
                     click: function() {
                         let filepath = $('#advdialog').attr('filepath')
@@ -383,7 +395,7 @@ $('#adv_perm_inheritance').change(function(){
                     },
                 },
                 Remove: {
-                    text: "Remove",
+                    text: "Clear All",
                     id: "adv-inheritance-remove-button",
                     click: function() {
                         let filepath = $('#advdialog').attr('filepath')
