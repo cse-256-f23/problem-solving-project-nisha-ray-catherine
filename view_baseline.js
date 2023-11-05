@@ -32,10 +32,10 @@ perm_dialog = define_new_dialog('permdialog', title='Permissions', options = {
 obj_name_div = $('<div id="permdialog_objname" class="section">Object Name: <span id="permdialog_objname_namespan"></span> </div>')
 
 //Make the div with explanation regarding group and individaul permissions
-permission_div = $('<div id="permdialog_advanced_explantion_text">Note: &quot;Deny&quot; overules &quot;Allow&quot; permissions in <strong>direct</strong> permission. </div>')
+permission_div = $('<div id="permdialog_advanced_explantion_text">Note: Selecting &quot;Deny&quot; will overule &quot;Allow&quot; permissions in <strong>direct</strong> permission. </div>')
 //<span class="oi oi-info"></span> 
 //Make the div with the explanation about special permissions/advanced settings:
-advanced_expl_div = $('<div id="permdialog_advanced_explantion_text">To edit <strong>inherited</strong> permissions from its parent folder, click Advanced.</div>')
+advanced_expl_div = $('<div id="permdialog_advanced_explantion_text">To edit <strong>inherited</strong> permissions instead, click Advanced.</div>')
 
 // Make the (grouped) permission checkboxes table:
 grouped_permissions = define_grouped_permission_checkboxes('permdialog_grouped_permissions')
@@ -69,7 +69,7 @@ perm_add_user_select.find('span').hide()// Cheating a bit - just show the button
 // -- Make button to remove currently-selected user; also make some dialogs that may pop up when user clicks this. --
 
 // Make a dialog which shows up when they're not allowed to remove that user from that file (because of inheritance)
-cant_remove_dialog = define_new_dialog('cant_remove_inherited_dialog', 'Security', {
+cant_remove_dialog = define_new_dialog('cant_remove_inherited_dialog', 'Unseccessful Change', {
     buttons: {
         OK: {
             text: "OK",
@@ -82,9 +82,10 @@ cant_remove_dialog = define_new_dialog('cant_remove_inherited_dialog', 'Security
 })
 cant_remove_dialog.html(`
 <div id="cant_remove_text">
-    You can't remove <span id="cant_remove_username_1" class = "cant_remove_username"></span> because this object is inheriting permissions from 
-    its parent. To remove <span id="cant_remove_username_2" class = "cant_remove_username"></span>, you must prevent this object from inheriting permissions.
-    Turn off the option for inheriting permissions, and then try removing <span id="cant_remove_username_3" class = "cant_remove_username"></span>  again.
+    <span id="cant_remove_username_1" class = "cant_remove_username"></span> was not successfully removed because it is inheriting permissions from 
+    its parent. 
+    <br> <br>
+    To remove <span id="cant_remove_username_2" class = "cant_remove_username"></span>, click “Advanced” → uncheck <strong>“Include inheritable permissions from this object's parent”</strong> → click “OK” → then go back and select the user to remove.
 </div>`)
 
 // Make a confirmation "are you sure you want to remove?" dialog
@@ -92,7 +93,7 @@ cant_remove_dialog.html(`
 let are_you_sure_dialog = define_new_dialog('are_you_sure_dialog', "Remove All Permissions", {
     buttons: {
         Yes: {
-            text: "Remove A User",
+            text: "Remove User",
             id: "are-you-sure-yes-button",
             click: function() {
                 // Which user and file were they trying to remove permissions for?
@@ -112,7 +113,7 @@ let are_you_sure_dialog = define_new_dialog('are_you_sure_dialog', "Remove All P
             },
         },
         No: {
-            text: "Go Back",
+            text: "Cancel",
             id: "are-you-sure-no-button",
             click: function() {
                 $( this ).dialog( "close" );
@@ -324,7 +325,7 @@ $( "#advtabs" ).tabs({
 let adv_contents = $(`#advdialog`).dialog({
     position: { my: "top", at: "top", of: $('#html-loc') },
     width: 700,
-    height: 450,
+    height: 550,
     modal: true,
     autoOpen: false,
     appendTo: "#html-loc",

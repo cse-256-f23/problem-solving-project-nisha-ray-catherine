@@ -4,7 +4,7 @@
 }
 
 .section {
-    margin-bottom: 2em;
+    margin-bottom: 1.5em;
 }
 
 .ui-selected { 
@@ -18,7 +18,7 @@
     right: 0;
 }
 
-#permdialog_objname, #permdialog_advanced_explantion_text, #full_control_alert{
+#permdialog_objname, #adv_perm_object_name, #adv_effective_object_name, #adv_owner_object_name, #permdialog_advanced_explantion_text, #full_control_alert{
     font-size: 0.8em;
     font-style: italic;
 }
@@ -27,12 +27,12 @@
     margin-bottom: 0.2em;
 }
 
-#permissions_user_title{
+#permissions_user_title, #adv_owner_change_owner_text{
     margin-bottom: 0.4em;
     font-weight: 600;
 }
 
-#perm_add_user_line {
+#perm_add_user_line, #adv_perm_edit {
     display: block;
     width: fit-content;
     margin-bottom: 2em;
@@ -40,7 +40,7 @@
     margin-right: 0;
 }
 
-#permdialog_grouped_permissions{
+#permdialog_grouped_permissions, #adv_perm_table_container, #adv_perm_inheritance_div{
     margin-bottom: 0.4em;
 }
 
