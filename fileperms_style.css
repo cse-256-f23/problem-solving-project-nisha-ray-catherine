@@ -4,7 +4,7 @@
 }
 
 .section {
-    margin-bottom: 5px;
+    margin-bottom: 2em;
 }
 
 .ui-selected { 
@@ -18,6 +18,23 @@
     right: 0;
 }
 
+#permdialog_objname {
+    font-size: 0.8em;
+    font-style: italic;
+}
+
+#permissions_user_title{
+    margin-bottom: 0.4em;
+    font-weight: 600;
+}
+
+#perm_add_user_line {
+    display: block;
+    width: fit-content;
+    margin-bottom: 2em;
+    margin-left: auto; 
+    margin-right: 0;
+}
 
 #mturk-top-banner-drop-down-content {
     position: absolute;
