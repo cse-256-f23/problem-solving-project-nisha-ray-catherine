@@ -32,7 +32,7 @@ perm_dialog = define_new_dialog('permdialog', title = 'Permissions', options = {
 obj_name_div = $('<div id="permdialog_objname" class="section">Object Name: <span id="permdialog_objname_namespan"></span> </div>')
 
 //Make the div with explanation regarding group and individaul permissions
-permission_div = $('<div id="permdialog_advanced_explantion_text">Note: Selecting &quot;Deny&quot; will overule &quot;Allow&quot; permissions in <strong>direct</strong> permission. </div>')
+permission_div = $('<div id="permdialog_advanced_explantion_text">Note:  &quot;Deny&quot; will overule &quot;Allow&quot; permissions in <strong>direct</strong> permission. </div>')
 //<span class="oi oi-info"></span> 
 //Make the div with the explanation about special permissions/advanced settings:
 advanced_expl_div = $('<div id="permdialog_advanced_explantion_text">To edit <strong>inherited</strong> permissions instead, click Advanced.</div>')
