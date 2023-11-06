@@ -38,7 +38,7 @@ function make_file_element(file_obj) {
      //hard3 task WIP
      if (file_obj.filename == 'Lecture2.txt' && !file_obj.using_permission_inheritance) {
         file_elem.append(
-          "<span id='no_perm_alert'><span class='oi oi-warning'></span>This file is missing permissions applied from its parent folder. To fix this, click “Edit Permissions” next to the <strong>parent folder</strong> → click “Advanced” → check “Apply folder permissions to children file” → click “OK”.</span>"
+          "<span id='no_perm_alert'><span class='oi oi-warning'></span>This file is missing permissions applied from its parent folder. To fix this, click “Edit Permissions” next to the <strong>parent folder</strong> → click “Advanced” → check <strong>“* Apply folder permissions to all files within”</strong> → click “OK”.</span>"
         );
     }
     else{
