@@ -35,7 +35,7 @@ function make_file_element(file_obj) {
             </button>
         </div>`);
 
-     //hard3 task WIP
+     //Task Hard3 WIP: adding an alert if correct permission is missing
      if (file_obj.filename == 'Lecture2.txt' && !file_obj.using_permission_inheritance) {
         file_elem.append(
           "<span id='no_perm_alert'><span class='oi oi-warning'></span>This file is missing permissions applied from its parent folder. To fix this, click “Edit Permissions” next to the <strong>parent folder</strong> → click “Advanced” → check <strong>“* Apply folder permissions to all files within”</strong> → click “OK”.</span>"

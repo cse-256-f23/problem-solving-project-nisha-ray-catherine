@@ -18,7 +18,7 @@
     right: 0;
 }
 
-#permdialog_objname, #adv_perm_object_name, #adv_effective_object_name, #adv_owner_object_name, #permdialog_advanced_explantion_text, #full_control_alert, #no_perm_alert{
+#permdialog_objname, #adv_perm_object_name, #adv_effective_object_name, #adv_owner_object_name, #permdialog_advanced_explantion_text, #full_control_alert, #no_perm_alert, #group_alert{
     font-size: 0.8em;
     font-style: italic;
 }

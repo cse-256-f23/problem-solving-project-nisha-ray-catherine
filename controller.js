@@ -64,7 +64,8 @@ permission_groups = {
         permissions.READ_PERMS,
         permissions.EXECUTE,
     ],
-    Modify: [
+    //changing Modify to Make_Changes for the purpose of Task Hard1;
+    Make_Changes: [
         permissions.WRITE_DATA,
         permissions.APPEND_DATA,
         permissions.WRITE_ATTR,

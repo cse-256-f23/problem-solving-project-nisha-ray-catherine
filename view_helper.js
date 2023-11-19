@@ -40,7 +40,8 @@ function make_user_elem(id_prefix, uname, user_attributes = null) {
         <span id="${id_prefix}_${uname}_icon" class="oi ${
     is_user(all_users[uname]) ? "oi-person" : "oi-people"
   }"/> 
-        <span id="${id_prefix}_${uname}_text">${uname} </span>
+        //Task Hard1 WIP: adding group alert
+        <span id="${id_prefix}_${uname}_text">${uname == 'employees' && id_prefix == 'permdialog_file_user'?'employees <div id="group_alert">This is a group. To edit permissions for a specific employee, add that employee by clicking Add a User.</div>':uname} </span>
     </div>`);
 
   if (user_attributes) {
