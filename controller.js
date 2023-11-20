@@ -72,6 +72,10 @@ permission_groups = {
         permissions.WRITE_EXTENDED_ATTR,
         permissions.DELETE,
         permissions.DELETE_SUB,
+        permissions.READ_ATTR,
+        permissions.READ_EXTENDED_ATTR,
+        permissions.READ_PERMS,
+        permissions.LIST,
     ],
     Delete: [
         permissions.DELETE,
